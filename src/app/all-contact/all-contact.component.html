@@ -1,0 +1,50 @@
+<div class="container-fluid mt-3">
+    <div class="row">
+        <div class="col">
+            <h1>ContactEase &nbsp; <a routerLink="add-contact" class="btn btn-success"><i
+                        class="fa-solid fa-user-plus"></i> Add new</a></h1>
+        </div>
+    </div>
+    <p class="mt-4" style="text-align: justify;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem impedit
+        minima fugiat repellat. Dolore
+        accusamus nisi voluptatum aliquam numquam officiis voluptate, commodi itaque odio, magni est illo tempore, enim
+        facilis.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis ratione maxime quod facilis libero aliquam
+        reiciendis debitis numquam doloribus veniam, illo laborum praesentium est consequuntur natus inventore dicta
+        nisi voluptates.</p>
+        <div class="row">
+            <div class="col-lg-6">
+              <form>
+                <input type="text" name="searchKey" [(ngModel)]="searchKey" placeholder="search contact here" class="form-control mt-2">
+              </form>
+            </div>
+            <div class="col-lg-6">
+                <input type="button" value="Search" class="btn btn-primary mt-2">
+            </div>
+            <div class="m-2">
+                <div class="row">
+                    <div class="card col-lg-5 m-auto mb-2 " *ngFor="let data of allContacts | filter : searchKey :'name'" >
+                        <div class="card-body">
+                           <div class="row">
+                                <div class="col-md-3">
+                                    <img class="rounded-circle" height="150px" width="100px" [src]="data.photo" [alt]="data.name">
+                                </div>
+                                <div class="col-md-8 mt-3">
+                                    <ul class="list-group">
+                                     <li class="list-group-item"> Name : <b>{{data.name}}</b></li>
+                                     <li class="list-group-item"> mobile : <b>{{data.phone}} </b></li>
+                                     <li class="list-group-item"> Email: <b>{{data.email}} </b> </li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-1 d-flex flex-column justify-content-center align-items-center">
+                                    <a routerLink="view-contact/{{data.id}} " class="btn btn-success mt-1"><i class="fa-regular fa-eye"></i></a>
+                                    <a routerLink="update-contact/{{data.id}} " class="btn btn-warning mt-1"><i class="fa-solid fa-pen-to-square"></i></a>
+                                    <button (click)="deleteContact(data.id)" class="btn btn-danger mt-1"><i class="fa-solid fa-trash "></i></button>
+                                </div>
+                           </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>     
+</div>

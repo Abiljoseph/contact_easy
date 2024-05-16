@@ -1,0 +1,53 @@
+<div class="container">
+    <h1>title</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus sunt animi, a error, dicta ad ab unde
+        repudiandae atque itaque voluptates saepe tenetur, quia ipsum fugiat excepturi impedit quod. Maxime? Lorem ipsum
+        dolor sit amet consectetur adipisicing elit. Magni nisi ad dignissimos alias maxime quia tenetur nam saepe
+        officiis explicabo veniam similique corporis odio fuga, adipisci mollitia iusto aliquam sunt!</p>
+
+    <div class="row">
+        <div class="col-md-3 mt-3">
+        </div>
+        <div class="col-md-6 mt-3">
+            <ul class="list-group border-none">
+                <li class="list-group-item border-none">
+                    <input type="text"  name="id" [(ngModel)]="contact.id" [value]="contact.id" class="form-control" placeholder="Contact ID">
+                </li>
+                <li class="list-group-item">
+                    <input type="text"  name="name" [(ngModel)]="contact.name" [value]="contact.name" class="form-control" placeholder="Name :">
+                </li>
+                <li class="list-group-item">
+                    <input type="text"  name="photo" [(ngModel)]="contact.photo"[value]="contact.photo" class="form-control" placeholder="image :">
+                </li>
+                <li class="list-group-item">
+                    <input type="email"  name="email" [(ngModel)]="contact.email" [value]="contact.email" class="form-control" placeholder="email">
+                </li>
+                <li class="list-group-item">
+                    <input type="text"  name="phone" [(ngModel)]="contact.phone" [value]="contact.phone" class="form-control" placeholder="mobile">
+                </li>
+                
+                <li class="list-group-item">
+                    <input type="text"  name="title" [(ngModel)]="contact.title" [value]="contact.title" class="form-control" placeholder="title">
+                </li>
+                <li class="list-group-item form-control">
+                    <div class="dropdown">
+                        <select class="form-control" name="groupId" id="groupId" [(ngModel)]="contact.groupId">
+                            <option selected disabled hidden>{{groupName}}</option>
+                          <option [value]="group.id" *ngFor="let group of groups">{{group.name}}</option>
+                        </select>
+                       
+                      </div>
+                </li> 
+                <div class="mt-3 ms-2 me-2 d-flex justify-content-between">
+                    <div><a routerLink="" class="btn btn-outline-info"><i class="fa-solid fa-circle-chevron-left"></i> Back</a></div>
+                    <div><a  (click)="updateContact(contact)" class="btn btn-success">Update</a></div>
+                </div>
+            </ul>
+          
+        </div>
+        <div class="col-md-3">
+            <img style="width: 200px;" [src]="contact.photo" alt="pro-image">
+        </div>
+    </div>
+</div>
+

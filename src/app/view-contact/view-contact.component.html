@@ -1,0 +1,33 @@
+<div class="container">
+    <h1>{{contact.name}} </h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus sunt animi, a error, dicta ad ab unde
+        repudiandae atque itaque voluptates saepe tenetur, quia ipsum fugiat excepturi impedit quod. Maxime? Lorem ipsum
+        dolor sit amet consectetur adipisicing elit. Magni nisi ad dignissimos alias maxime quia tenetur nam saepe
+        officiis explicabo veniam similique corporis odio fuga, adipisci mollitia iusto aliquam sunt!</p>
+    <div class="row">
+        <div class="col-md-4 mt-3 d-flex align-items-center">
+            <img style="width: 300px;" [src]="contact.photo" alt="contact-img">
+        </div>
+        <div class="col-md-8 mt-5">
+            <ul class="list-group">
+                <li class="list-group-item">
+                   Name : <b>{{contact.name}}</b>
+                </li>
+                <li class="list-group-item">
+                   Email : <b>{{contact.email}} </b>
+                </li>
+                <li class="list-group-item">
+                   Mob : <b>{{contact.phone}} </b>
+                </li>
+                <li class="list-group-item">
+                  Company : <b>{{contact.company}} </b>
+                </li>
+                <li class="list-group-item">
+                 Group : <b>{{groupName}} </b>
+                </li>
+            </ul>
+        </div>
+        <div class="d-flex justify-content-center"><a routerLink="" class="btn btn-outline-info"><i class="fa-solid fa-circle-chevron-left"></i> Back</a></div>
+
+    </div>
+</div>
